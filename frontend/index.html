@@ -3,23 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My To-Do List</title>
+  <title>Tasko — My To-Do List</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>My To-Do List</h1>
 
-    <div class="input-area">
-      <input type="text" id="todo-input" placeholder="What needs to be done?">
-      <button id="add-button">Add</button>
+  <div class="app">
+
+    <header class="header">
+      <div class="header-top">
+        <h1 class="logo">tasko.</h1>
+        <span class="date-label" id="date-label"></span>
+      </div>
+      <p class="tagline">What's on your plan today?</p>
+    </header>
+
+    <div class="input-wrapper">
+      <input
+        type="text"
+        id="todo-input"
+        placeholder="Add a new task..."
+        autocomplete="off"
+        maxlength="120"
+      />
+      <button id="add-btn" aria-label="Add task">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
     </div>
 
-    <ul id="todo-list"></ul>
-
-    <div class="footer">
-      <span id="task-count">0 tasks</span>
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="active">Active</button>
+      <button class="filter-btn" data-filter="completed">Done</button>
     </div>
+
+    <ul id="todo-list" class="todo-list">
+      <!-- Tasks render here via JS -->
+    </ul>
+
+    <div class="empty-state" id="empty-state">
+      <div class="empty-icon">✦</div>
+      <p>No tasks yet.<br>Add one above to get started.</p>
+    </div>
+
+    <footer class="footer">
+      <span id="task-count">0 tasks remaining</span>
+      <button id="clear-completed" class="clear-btn">Clear completed</button>
+    </footer>
+
   </div>
 
   <script src="js/script.js"></script>
