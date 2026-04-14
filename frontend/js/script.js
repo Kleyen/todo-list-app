@@ -2,7 +2,7 @@
 //  CONFIG — change this when backend is ready
 // ─────────────────────────────────────────────
 const API_URL = 'http://127.0.0.1:5000';
-const USE_BACKEND = false; // flip to true once Flask is running
+const USE_BACKEND = true; // flip to true once Flask is running
 
 
 // ─────────────────────────────────────────────
